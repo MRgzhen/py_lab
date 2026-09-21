@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /home/gz/dev/py_lab config user.name)",
+      "Bash(git -C /home/gz/dev/py_lab config user.email)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(git credential-store *)",
+      "Read(//home/gz/**)",
+      "Read(//home/gz/.ssh/**)",
+      "Bash(ssh -T git@github.com -o StrictHostKeyChecking=no -o ConnectTimeout=5)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git remote *)"
+    ]
+  }
+}
