@@ -23,3 +23,6 @@ htmlcov/
 # 其他
 .DS_Store
 *.log
+
+# 视频输出
+*.avi

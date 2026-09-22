@@ -12,7 +12,28 @@
       "Bash(git init *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Read(//home/gz/.config/Code/User/**)",
+      "Read(//home/gz/.config/ZCode/**)",
+      "Read(//home/gz/.config/Code/**)",
+      "Read(//home/gz/.config/**)",
+      "Read(//home/gz/.config/fcitx5/**)",
+      "Bash(code --version)",
+      "Read(//home/gz/.vscode/extensions/**)",
+      "WebSearch",
+      "Bash(code --install-extension astral-sh.ruff)",
+      "Bash(code --install-extension ms-python.black-formatter)",
+      "Bash(code --install-extension charliermarsh.ruff)",
+      "Bash(curl -sL --max-time 60 --compressed -o /tmp/black-formatter.vsix \"https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/black-formatter/0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage\")",
+      "Read(//tmp/**)",
+      "Bash(curl -sL --max-time 90 --compressed -o /tmp/black-formatter.vsix \"https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/black-formatter/latest/vspackage\")",
+      "Bash(code --list-extensions)",
+      "Read(//home/gz/.vscode/extensions/alphabotsec.vscode-eclipse-keybindings-0.16.1/**)",
+      "Bash(git -C /home/gz/dev/py_lab status --short)",
+      "Bash(git -C /home/gz/dev/py_lab diff)"
+    ],
+    "additionalDirectories": [
+      "/home/gz/.config/Code/User"
     ]
   }
 }
