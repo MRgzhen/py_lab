@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dpkg -l)",
+      "Bash(snap list *)",
+      "Read(//usr/share/code/bin/**)",
+      "Bash(dpkg -S /usr/bin/code)",
+      "Read(//usr/share/code/**)",
+      "Bash(sudo -n true)",
+      "Bash(grep *)",
+      "Bash(echo *)",
+      "Bash(URL=\"https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/latest/vspackage\"; echo \"=== 走代理 ===\"; curl -sLx http://127.0.0.1:7897 -o /dev/null -w \"HTTP %{http_code} | 下载 %{size_download} 字节 | 用时 %{time_total}s | 速度 %{speed_download} B/s\\\\n\" --max-time 60 \"$URL\"; echo \"=== 直连 ===\"; curl -sL -o /dev/null -w \"HTTP %{http_code} | 下载 %{size_download} 字节 | 用时 %{time_total}s | 速度 %{speed_download} B/s\\\\n\" --max-time 60 \"$URL\")",
+      "Bash(URL=\"https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/latest/vspackage\"; echo \"=== 当前代理速度 ===\"; curl -sLx http://127.0.0.1:7897 -o /dev/null -w \"速度 %{speed_download} B/s\\\\n\" --max-time 25 \"$URL\"; echo \"=== CDN 实际地址 ===\"; curl -sILx http://127.0.0.1:7897 --max-time 15 \"$URL\" -o /dev/null -w \"%{url_effective}\\\\n\"; echo \"=== DNS 解析 ===\"; getent hosts ms-python.gallerycdn.vsassets.io; getent hosts marketplace.visualstudio.com)",
+      "Bash(python3 -c \"import cv2; print\\('cv2', cv2.__version__, cv2.__file__\\)\")",
+      "Bash(/home/gz/dev/py_lab/.venv/bin/python -c \"import cv2; print\\('venv cv2', cv2.__version__\\)\")",
+      "Read(//usr/lib/python3/dist-packages/**)",
+      "Bash(/home/gz/miniconda3/envs/opencv_lab/bin/python -c \"import sys; print\\(sys.version\\)\")",
+      "Bash(/home/gz/miniconda3/envs/opencv_lab/bin/python -c \"import cv2; print\\('cv2', cv2.__version__\\); print\\(cv2.__file__\\)\")",
+      "Bash(/home/gz/miniconda3/envs/opencv_lab/bin/python -c \"from cv2 import imshow; print\\('imshow OK', imshow\\)\")",
+      "Bash(mkdir -p ~/.config/ruff)",
+      "Bash(git push *)"
+    ],
+    "additionalDirectories": [
+      "/home/gz/.config"
+    ]
+  }
+}
