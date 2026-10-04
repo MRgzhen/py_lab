@@ -103,8 +103,8 @@ import numpy as np
 
 
 # ========== 5.3 开运算与闭运算 ==============#
-# 开运算：先腐蚀后膨胀
-# 闭运算：先膨胀后腐蚀
+# 开运算：先腐蚀后膨胀 目的：去掉背景上白色小噪点，平滑物体边缘
+# 闭运算：先膨胀后腐蚀 目的：填充前景白色物体内部的小黑孔洞，连接很近的断裂区域
 # img = cv2.imread("./erode.png")
 # if img is None:
 #     raise FileNotFoundError("图像读取失败，检查路径")
@@ -156,8 +156,8 @@ import numpy as np
 # cv2.destroyAllWindows()
 
 
-# ========== 5.5 礼貌&黑帽 ==============#
-# 礼貌：原图 - 开运算
+# ========== 5.5 礼帽&黑帽 ==============#
+# 礼帽：原图 - 开运算  目的：开运算会抹掉小亮点；原图减去开运算结果，剩下的就是被开运算删掉的那些小亮斑。
 # img = cv2.imread("./erode.png")
 # if img is None:
 #     raise FileNotFoundError("图像读取失败，检查路径")
@@ -168,7 +168,7 @@ import numpy as np
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
-# 黑帽：闭运算 - 原图
+# 黑帽：闭运算 - 原图  目的：闭运算会填充小黑孔洞；闭运算减去原图结果，剩下的就是被闭运算填充的那些小黑区域。
 # img = cv2.imread("./erode.png")
 # if img is None:
 #     raise FileNotFoundError("图像读取失败，检查路径")
@@ -179,6 +179,7 @@ import numpy as np
 # cv2.destroyAllWindows()
 
 # ========== 6 梯度 ==============#
+# 目的：专门提取物体边缘
 # img = cv2.imread("./dog.png")
 # if img is None:
 #     raise FileNotFoundError("图像读取失败，检查路径")
@@ -196,6 +197,7 @@ import numpy as np
 # cv2.destroyAllWindows()
 
 # ========== 7 阈值 ==============#
+# 目的：画一条亮度分界线，图片变成黑白二值图，分离目标和背景。
 # ret, dst = cv2.threshold(src, thresh, maxval, type)
 # - src: 输入图，只能输入单通道图像，通常来说为灰度图
 # - dst: 输出图
@@ -208,13 +210,13 @@ import numpy as np
 # - cv2.THRESH_TOZERO 大于阈值部分不改变，否则设为0
 # - cv2.THRESH_TOZERO_INV THRESH_TOZERO的反转
 
-# img = cv2.imread("./dog.png")
-# if img is None:
-#     raise FileNotFoundError("图像读取失败，检查路径")
-# ret, threshold = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
-# cv2.imshow("img5", threshold)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+img = cv2.imread("./dog.png")
+if img is None:
+    raise FileNotFoundError("图像读取失败，检查路径")
+ret, threshold = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+cv2.imshow("img5", threshold)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 # ========== 8 图像平滑 ==============#

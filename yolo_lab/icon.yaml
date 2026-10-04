@@ -1,0 +1,7 @@
+path: /home/gz/dev/py_lab/yolo_lab/datasets/icon
+train: images/train
+val: images/val
+test:  
+
+names:
+  0: garbage
